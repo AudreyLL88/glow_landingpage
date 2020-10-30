@@ -68,7 +68,7 @@ quit_quiz.onclick = ()=>{
 
 // If next button clicked
 next_btn.onclick =()=>{
-   if(que_count < questions.length -1){
+   if(que_count < questions1.length -1){
         que_count++;
         que_numb++;
     showQuestions(que_count);
@@ -88,11 +88,11 @@ next_btn.onclick =()=>{
 
 function showQuestions(index){
     const que_text = document.querySelector(".que_text");
-    let que_tag = '<span>'+ questions[index].numb + ". " + questions[index].question +'</span>';
-    let option_tag = '<div class="option"><span>'+ questions[index].options[0] +'</span></div>'
-    + '<div class="option"><span>'+ questions[index].options[1] +'</span></div>'
-    + '<div class="option"><span>'+ questions[index].options[2] +'</span></div>'
-    + '<div class="option"><span>'+ questions[index].options[3] +'</span></div>';
+    let que_tag = '<span>'+ questions1[index].numb + ". " + questions1[index].question +'</span>';
+    let option_tag = '<div class="option"><span>'+ questions1[index].options[0] +'</span></div>'
+    + '<div class="option"><span>'+ questions1[index].options[1] +'</span></div>'
+    + '<div class="option"><span>'+ questions1[index].options[2] +'</span></div>'
+    + '<div class="option"><span>'+ questions1[index].options[3] +'</span></div>';
     que_text.innerHTML = que_tag; 
     option_list.innerHTML = option_tag; 
 
@@ -109,7 +109,7 @@ function  optionSelected(answer){
     clearInterval(counter);
     clearInterval(counterLine);
     let userAns = answer.textContent;
-    let correctAns = questions[que_count].answer;
+    let correctAns = questions1[que_count].answer;
     const allOptions = option_list.children.length;
     if(userAns == correctAns){
         userScore += 1;
@@ -142,15 +142,15 @@ function showResult(){
     result_box.classList.add("activeResult"); 
     const scoreText = result_box.querySelector(".score_text");
     if (userScore > 3){ 
-        let scoreTag = '<span>and congrats! 🎉, You got <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
+        let scoreTag = '<span>and congrats! 🎉, You got <p>'+ userScore +'</p> out of <p>'+ questions1.length +'</p></span>';
         scoreText.innerHTML = scoreTag;  
     }
     else if(userScore > 1){ 
-        let scoreTag = '<span>and nice 😎, You got <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
+        let scoreTag = '<span>and nice 😎, You got <p>'+ userScore +'</p> out of <p>'+ questions1.length +'</p></span>';
         scoreText.innerHTML = scoreTag;
     }
     else{ 
-        let scoreTag = '<span>and sorry 😐, You got only <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
+        let scoreTag = '<span>and sorry 😐, You got only <p>'+ userScore +'</p> out of <p>'+ questions1.length +'</p></span>';
         scoreText.innerHTML = scoreTag;
     }
 }
@@ -186,6 +186,6 @@ function startTimerLine(time){
 function queCounter(index){
     //creating a new span tag and passing the question number and total question
     const bottom_ques_counter = document.querySelector(".total_que");
-    let totalQueCountTag = '<span><p>'+ index +'</p> of <p>'+ questions.length +'</p> Questions</span>';
+    let totalQueCountTag = '<span><p>'+ index +'</p> of <p>'+ questions1.length +'</p> Questions</span>';
     bottom_ques_counter.innerHTML = totalQueCountTag;  //adding new span tag inside bottom_ques_counter
 }
