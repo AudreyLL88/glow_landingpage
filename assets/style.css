@@ -169,7 +169,7 @@ h3 {
    margin-top: 10px;
    line-height: 1.6;
 }
-.post-back a{
+.post-back button{
    text-decoration: none;
    color: #ffffff;
    background-color: red;
@@ -195,6 +195,12 @@ text-align: center;
    display: flex;
    justify-content: center;
    flex-wrap: wrap; /* Required to position the posts one below the other on smaller devices */
+}
+.monster_card.disabled{
+    background: grey;
+}
+.monster_btn.disabled{
+    display: none;
 }
 
 /* Media Queries */

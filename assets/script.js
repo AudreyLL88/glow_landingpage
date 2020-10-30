@@ -1,3 +1,4 @@
+
 //getting all required elements
 const start_btn = document.querySelector(".start-btn button");
 const info_box = document.querySelector(".info_box");
@@ -8,6 +9,7 @@ const option_list = document.querySelector(".option_list");
 const timeCount = document.querySelector(".timer .timer_sec");
 const timeLine = document.querySelector("header .time_line");
 const timeOff = document.querySelector("header .time_text");
+
 
 //If Start Quiz button clicked
 
@@ -189,3 +191,13 @@ function queCounter(index){
     let totalQueCountTag = '<span><p>'+ index +'</p> of <p>'+ questions1.length +'</p> Questions</span>';
     bottom_ques_counter.innerHTML = totalQueCountTag;  //adding new span tag inside bottom_ques_counter
 }
+
+
+
+
+    const monster_btn = document.querySelector(".monster_btn button");
+    const monster_card = document.querySelector(".post-back .monster_card");
+    
+    monster_btn.onclick = () => {
+        monster_card.classList.add("disabled");
+    }
