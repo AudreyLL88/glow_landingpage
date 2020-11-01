@@ -1,6 +1,8 @@
 
 //getting all required elements
-const start_btn = document.querySelector(".start-btn button");
+const start_btn_slasher = document.querySelector(".start-btn-slasher button");
+const start_btn_monster = document.querySelector(".start-btn-monster button");
+const start_btn_paranormal = document.querySelector(".start-btn-paranormal button");
 const info_box = document.querySelector(".info_box");
 const exit_btn = info_box.querySelector(".buttons .quit");
 const continue_btn = info_box.querySelector(".buttons .restart");
@@ -10,12 +12,24 @@ const timeCount = document.querySelector(".timer .timer_sec");
 const timeLine = document.querySelector("header .time_line");
 const timeOff = document.querySelector("header .time_text");
 
-
+let activeCard = "None"
 //If Start Quiz button clicked
 
-start_btn.onclick =()=>{
+start_btn_slasher.onclick =()=>{
+    activeCard = "slasher";
     info_box.classList.add("activeInfo");
 }
+
+start_btn_monster.onclick =()=>{
+    activeCard = "monster";
+    info_box.classList.add("activeInfo");
+}
+
+start_btn_paranormal.onclick =()=>{
+    activeCard = "paranormal";
+    info_box.classList.add("activeInfo");
+}
+
 
 //If Exit Quiz button clicked
 
@@ -87,16 +101,30 @@ next_btn.onclick =()=>{
 }
 
 //getting questions and options from array
+let questionsArray
 
 function showQuestions(index){
+    console.log(activeCard);
+    let questionCategory = "None"
+    if(activeCard == "slasher"){
+        questionsArray = questions2;
+    }
+    else if(activeCard == "monster"){
+        questionsArray = questions3;
+    }
+    else if(activeCard == "paranormal"){
+        questionsArray = questions1;
+    }
+    const que_title = document.querySelector(".que_title");
     const que_text = document.querySelector(".que_text");
-    let que_tag = '<span>'+ questions1[index].numb + ". " + questions1[index].question +'</span>';
-    let option_tag = '<div class="option"><span>'+ questions1[index].options[0] +'</span></div>'
-    + '<div class="option"><span>'+ questions1[index].options[1] +'</span></div>'
-    + '<div class="option"><span>'+ questions1[index].options[2] +'</span></div>'
-    + '<div class="option"><span>'+ questions1[index].options[3] +'</span></div>';
+    let que_tag = '<span>'+ questionsArray[index].numb + ". " + questionsArray[index].question +'</span>';
+    let option_tag = '<div class="option"><span>'+ questionsArray[index].options[0] +'</span></div>'
+    + '<div class="option"><span>'+ questionsArray[index].options[1] +'</span></div>'
+    + '<div class="option"><span>'+ questionsArray[index].options[2] +'</span></div>'
+    + '<div class="option"><span>'+ questionsArray[index].options[3] +'</span></div>';
     que_text.innerHTML = que_tag; 
     option_list.innerHTML = option_tag; 
+    que_title.innerHTML = questionsArray[index].category; 
 
     const option = option_list.querySelectorAll(".option");
     for(i=0; i < option.length; i++){
@@ -111,7 +139,7 @@ function  optionSelected(answer){
     clearInterval(counter);
     clearInterval(counterLine);
     let userAns = answer.textContent;
-    let correctAns = questions1[que_count].answer;
+    let correctAns = questionsArray[que_count].answer;
     const allOptions = option_list.children.length;
     if(userAns == correctAns){
         userScore += 1;

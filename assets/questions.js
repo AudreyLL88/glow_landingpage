@@ -1,6 +1,7 @@
 //creating an array and passing the number, questions,options, and answers
 let questions1 = [
     {
+    category: "Paranormal",
     numb: 1,
     question: "Where is the house located in Conjuring 1?",
     answer: "Harrisville",
@@ -12,6 +13,7 @@ let questions1 = [
     ]
   },
     {
+    category: "Paranormal",
     numb: 2,
     question: "What is the baby's name in Insidious 1?",
     answer: "Cali",
@@ -23,6 +25,7 @@ let questions1 = [
     ]
   },
     {
+    category: "Paranormal",
     numb: 3,
     question: "From which mythology does the demon in The exorcist comes from?",
     answer: "The babylonian mythology",
@@ -34,6 +37,7 @@ let questions1 = [
     ]
   },
     {
+    category: "Paranormal",
     numb: 4,
     question: "Why is Rosemary pregnant with the devil in Rosemary's baby?",
     answer: "For her husband's fame",
@@ -45,6 +49,7 @@ let questions1 = [
     ]
   },
     {
+    category: "Paranormal",
     numb: 5,
     question: "What is the main evil object in Occulus?",
     answer: "A mirror",
@@ -60,6 +65,7 @@ let questions1 = [
 
 let questions2 = [
     {
+    category: "Slasher",
     numb: 1,
     question: "Who is the killer in The Nightmare on Elm Street ?",
     answer: "Freddy Krueger",
@@ -71,6 +77,7 @@ let questions2 = [
     ]
   },
     {
+    category: "Slasher",
     numb: 2,
     question: "Where does Friday 13th take place?",
     answer: "In Camp Crystal Lake",
@@ -82,6 +89,7 @@ let questions2 = [
     ]
   },
     {
+    category: "Slasher",
     numb: 3,
     question: "Where does the opening scene in The Collection takes place?",
     answer: "Hypertext Preprocessor",
@@ -93,6 +101,7 @@ let questions2 = [
     ]
   },
     {
+    category: "Slasher",
     numb: 4,
     question: "How does the final girl escape in Texas Chainsaw Massacre?",
     answer: "Jumping in a pick-up truck",
@@ -104,6 +113,7 @@ let questions2 = [
     ]
   },
     {
+    category: "Slasher",
     numb: 5,
     question: "In Scream, what does the killer ask on the phone?",
     answer: "Do you like scary movies?",
@@ -119,6 +129,7 @@ let questions2 = [
 
 let questions3 = [
     {
+    category: "Monsters",
     numb: 1,
     question: "What is the name of the spaceship in Alien?",
     answer: "Nostromo",
@@ -130,6 +141,7 @@ let questions3 = [
     ]
   },
     {
+    category: "Monsters",
     numb: 2,
     question: "Where does Cloverfield takes place?",
     answer: "New york",
@@ -141,6 +153,7 @@ let questions3 = [
     ]
   },
     {
+    category: "Monsters",
     numb: 3,
     question: "The earliest filmed version of Frankenstein was filmed in?",
     answer: "1931",
@@ -152,6 +165,7 @@ let questions3 = [
     ]
   },
     {
+    category: "Monsters",
     numb: 4,
     question: "The Tabonga appears in what monster film?",
     answer: "For her husband's fame",
@@ -163,6 +177,7 @@ let questions3 = [
     ]
   },
     {
+    category: "Monsters",
     numb: 5,
     question: "What is the setting for The Thing?",
     answer: "A mirror",
