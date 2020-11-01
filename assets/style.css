@@ -253,6 +253,21 @@ text-align: center;
     transform: translate(-50%, -50%) scale(1);
 }
 
+.quiz_back {
+    width: 100%;
+    height: 100%;
+     position: absolute;
+    top:50%;
+    left:50%;
+}
+
+.quiz_back.activeBack{
+    z-index: 4;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    background-color: yellow;
+}
+
 .start-btn button {
     font-size: 25px;
     font-weight: 500;

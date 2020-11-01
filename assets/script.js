@@ -14,24 +14,28 @@ const timeOff = document.querySelector("header .time_text");
 const slasherWrap = document.querySelector(".post-wrap1");
 const monsterWrap = document.querySelector(".post-wrap3");
 const paranormalWrap = document.querySelector(".post-wrap2");
+const quiz_back = document.querySelector(".quiz_back");
 
 let activeCard = "None"
 //If Start Quiz button clicked
 
 start_btn_slasher.onclick =()=>{
     activeCard = "slasher";
+    quiz_back.classList.add("activeBack");
     info_box.classList.add("activeInfo");
     slasherWrap.classList.add("noHover");
 }
 
 start_btn_monster.onclick =()=>{
     activeCard = "monster";
+    quiz_back.classList.add("activeBack");
     info_box.classList.add("activeInfo");
     monsterWrap.classList.add("noHover");
 }
 
 start_btn_paranormal.onclick =()=>{
     activeCard = "paranormal";
+    quiz_back.classList.add("activeBack");
     info_box.classList.add("activeInfo");
     paranormalWrap.classList.add("noHover");
 }
@@ -78,6 +82,9 @@ next_card.onclick = ()=>{
     widthValue = 0;
     if(cardCount >= 3){
         showFinal();
+    }
+    else{
+        quiz_back.classList.remove("activeBack");
     }
 }
 
@@ -191,16 +198,16 @@ function showFinal(){
     result_box.classList.remove("activeResult"); 
     final_box.classList.add("activeFinal")
     const finalText = final_box.querySelector(".final_text");
-    if (userScore > 3){ 
-        let finalTag = '<span>and congrats! 🎉, You got <p>'+ totalScore +'</p> out of </p></span>';
+    if (userScore = 15){ 
+        let finalTag = '<span>and congrats! 🎉, You got <p>'+ totalScore +'</p></span>';
         finalText.innerHTML = finalTag;  
     }
-    else if(userScore > 1){ 
-        let finalTag = '<span>and nice 😎, You got <p>'+ totalScore +'</p> out of </p></span>';
+    else if(userScore > 10){ 
+        let finalTag = '<span>and nice 😎, You got <p>'+ totalScore +'</p></span>';
         finalText.innerHTML = finalTag;
     }
     else{ 
-        let finalTag = '<span>and sorry 😐, You got only <p>'+ totalScore +'</p> out of </p></span>';
+        let finalTag = '<span>and sorry 😐, You got only <p>'+ totalScore +'</p></span>';
         finalText.innerHTML = finalTag;
     }
 }
