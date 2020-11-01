@@ -11,6 +11,9 @@ const option_list = document.querySelector(".option_list");
 const timeCount = document.querySelector(".timer .timer_sec");
 const timeLine = document.querySelector("header .time_line");
 const timeOff = document.querySelector("header .time_text");
+const slasherWrap = document.querySelector(".post-wrap1");
+const monsterWrap = document.querySelector(".post-wrap3");
+const paranormalWrap = document.querySelector(".post-wrap2");
 
 let activeCard = "None"
 //If Start Quiz button clicked
@@ -18,18 +21,20 @@ let activeCard = "None"
 start_btn_slasher.onclick =()=>{
     activeCard = "slasher";
     info_box.classList.add("activeInfo");
+    slasherWrap.classList.add("noHover");
 }
 
 start_btn_monster.onclick =()=>{
     activeCard = "monster";
     info_box.classList.add("activeInfo");
+    monsterWrap.classList.add("noHover");
 }
 
 start_btn_paranormal.onclick =()=>{
     activeCard = "paranormal";
     info_box.classList.add("activeInfo");
+    paranormalWrap.classList.add("noHover");
 }
-
 
 //If Exit Quiz button clicked
 
@@ -55,31 +60,25 @@ let counterLine;
 let timeValue = 15;
 let widthValue = 0;
 let userScore = 0;
+let totalScore = 0;
+let cardCount = 0;
 
 const next_btn = quiz_box.querySelector(".next_btn");
 const result_box = document.querySelector(".result_box");
 const restart_quiz = result_box.querySelector(".buttons .restart");
-const quit_quiz = result_box.querySelector(".buttons .quit");
+const next_card = result_box.querySelector(".buttons .next_card");
+const final_box = document.querySelector(".final_box");
 
-restart_quiz.onclick = ()=>{
-    quiz_box.classList.add("activeQuiz"); //show quiz box
+next_card.onclick = ()=>{
     result_box.classList.remove("activeResult"); //hide result box
     timeValue = 15; 
     que_count = 0;
     que_numb = 1;
     userScore = 0;
     widthValue = 0;
-    showQuestions(que_count); //calling showQestions function
-    queCounter(que_numb); //passing que_numb value to queCounter
-    clearInterval(counter); //clear counter
-    clearInterval(counterLine); //clear counterLine
-    startTimer(timeValue); //calling startTimer function
-    startTimerLine(widthValue); //calling startTimerLine function
-    next_btn.classList.remove("show"); //hide the next button
-}
-
-quit_quiz.onclick = ()=>{
-    window.location.reload(); //reload the current window
+    if(cardCount >= 3){
+        showFinal();
+    }
 }
 
 // If next button clicked
@@ -104,7 +103,6 @@ next_btn.onclick =()=>{
 let questionsArray
 
 function showQuestions(index){
-    console.log(activeCard);
     let questionCategory = "None"
     if(activeCard == "slasher"){
         questionsArray = questions2;
@@ -143,6 +141,7 @@ function  optionSelected(answer){
     const allOptions = option_list.children.length;
     if(userAns == correctAns){
         userScore += 1;
+        totalScore += 1;
         console.log(userScore);
         answer.classList.add("correct");
         console.log("Answer is correct");
@@ -167,6 +166,9 @@ function  optionSelected(answer){
 }
 
 function showResult(){
+    console.log("total score " + totalScore);
+    cardCount += 1;
+    console.log("card count " + cardCount);
     info_box.classList.remove("activeInfo"); 
     quiz_box.classList.remove("activeQuiz"); 
     result_box.classList.add("activeResult"); 
@@ -182,6 +184,24 @@ function showResult(){
     else{ 
         let scoreTag = '<span>and sorry 😐, You got only <p>'+ userScore +'</p> out of <p>'+ questions1.length +'</p></span>';
         scoreText.innerHTML = scoreTag;
+    }
+}
+
+function showFinal(){ 
+    result_box.classList.remove("activeResult"); 
+    final_box.classList.add("activeFinal")
+    const finalText = final_box.querySelector(".final_text");
+    if (userScore > 3){ 
+        let finalTag = '<span>and congrats! 🎉, You got <p>'+ totalScore +'</p> out of </p></span>';
+        finalText.innerHTML = finalTag;  
+    }
+    else if(userScore > 1){ 
+        let finalTag = '<span>and nice 😎, You got <p>'+ totalScore +'</p> out of </p></span>';
+        finalText.innerHTML = finalTag;
+    }
+    else{ 
+        let finalTag = '<span>and sorry 😐, You got only <p>'+ totalScore +'</p> out of </p></span>';
+        finalText.innerHTML = finalTag;
     }
 }
 
@@ -219,13 +239,3 @@ function queCounter(index){
     let totalQueCountTag = '<span><p>'+ index +'</p> of <p>'+ questions1.length +'</p> Questions</span>';
     bottom_ques_counter.innerHTML = totalQueCountTag;  //adding new span tag inside bottom_ques_counter
 }
-
-
-
-
-    const monster_btn = document.querySelector(".monster_btn button");
-    const monster_card = document.querySelector(".post-back .monster_card");
-    
-    monster_btn.onclick = () => {
-        monster_card.classList.add("disabled");
-    }

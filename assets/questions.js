@@ -92,7 +92,7 @@ let questions2 = [
     category: "Slasher",
     numb: 3,
     question: "Where does the opening scene in The Collection takes place?",
-    answer: "Hypertext Preprocessor",
+    answer: "An underground nightclub",
     options: [
       "A suburb house",
       "A swimming pool",

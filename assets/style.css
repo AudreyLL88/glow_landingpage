@@ -92,7 +92,9 @@ h3 {
 
 /* Card page */
 
-.post-wrap {
+.post-wrap1,
+.post-wrap2,
+.post-wrap3 {
    width: 300px;
    height: 380px;
    perspective: 200rem;
@@ -126,9 +128,17 @@ h3 {
    transform: rotateY(180deg);
 }
 
-.post-wrap:hover .post {
+.post-wrap1:hover .post,
+.post-wrap2:hover .post,
+.post-wrap3:hover .post{
    transform: rotateY(180deg);
 }
+
+.noHover{
+    pointer-events: none;
+    background: blue;
+}
+
 
 .post-img {
    background-size: cover;
@@ -180,6 +190,9 @@ h3 {
    font-weight: bold;
    border-radius: 5px;
 }
+.post-back button.disabled {
+    display: none;
+}
 
 .title-container{
 max-width: 1200px;
@@ -219,7 +232,8 @@ text-align: center;
 
 .info_box,
 .quiz_box,
-.result_box{
+.result_box,
+.final_box{
     position: absolute;
     top:50%;
     left:50%;
@@ -231,7 +245,8 @@ text-align: center;
 
 .info_box.activeInfo,
 .quiz_box.activeQuiz,
-.result_box.activeResult {
+.result_box.activeResult,
+.final_box.activeFinal{
     z-index: 5;
     opacity: 1;
     pointer-events: auto;
@@ -314,7 +329,7 @@ text-align: center;
 
 }
 
-.buttons button.quit{
+.buttons button.next_card{
     color: white;
 }
 
@@ -322,7 +337,7 @@ text-align: center;
     background: #0263ca;
 }
 
-.buttons button.quit:hover{
+.buttons button.next_card:hover{
     background: #0263ca;
     color: #fff;
 }
@@ -521,7 +536,8 @@ footer .next_btn:hover{
     background: #0263ca;
 }
 
-.result_box{
+.result_box,
+.final_box{
     background: #fff;
     width: 450px;
     max-width: 80%;
@@ -537,18 +553,21 @@ footer .next_btn:hover{
     transform: translate(-50%, -50%) scale(0.5);
 }
 
-.result_box .icon {
+.result_box .icon,
+.final_box .icon  {
     font-size: 100px;
     color: white;
     margin-bottom: 10px;
 }
 
-.result_box .complete_text{
+.result_box .complete_text
+.final_box .complete_text{
     font-size: 20px;
     font-weight: 500;
 }
 
-.result_box .score_text span {
+.result_box .score_text span
+.final_box .final_text span {
     display: flex;
     margin: 10px 0;
     font-size: 18px;
@@ -560,12 +579,14 @@ footer .next_btn:hover{
     padding: 0 4px;
 }
 
-.result_box .buttons{
+.result_box .buttons,
+.final_box .buttons{
     display: flex;
     margin: 20px 0;
 }
 
-.result_box .buttons button{
+.result_box .buttons button,
+.final_box .buttons button{
     margin: 0 10px;
     height: 45px;
     padding: 0 20px;
