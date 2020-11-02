@@ -14,12 +14,14 @@ const slasherWrap = document.querySelector(".card-wrap1");
 const monsterWrap = document.querySelector(".card-wrap3");
 const paranormalWrap = document.querySelector(".card-wrap2");
 const quiz_back = document.querySelector(".quiz_back");
+const container_disabled = document.querySelector(".card-container");
 
 let activeCard = "None"
 //If Start Quiz button clicked
 
 start_btn_slasher.onclick =()=>{
     activeCard = "slasher";
+    container_disabled.classList.add("disabled");
     quiz_back.classList.add("activeBack");
     rule_box.classList.add("activeInfo");
     slasherWrap.classList.add("noHover");
@@ -27,6 +29,7 @@ start_btn_slasher.onclick =()=>{
 
 start_btn_monster.onclick =()=>{
     activeCard = "monster";
+    container_disabled.classList.add("disabled");
     quiz_back.classList.add("activeBack");
     rule_box.classList.add("activeInfo");
     monsterWrap.classList.add("noHover");
@@ -34,6 +37,7 @@ start_btn_monster.onclick =()=>{
 
 start_btn_paranormal.onclick =()=>{
     activeCard = "paranormal";
+    container_disabled.classList.add("disabled");
     quiz_back.classList.add("activeBack");
     rule_box.classList.add("activeInfo");
     paranormalWrap.classList.add("noHover");
@@ -64,6 +68,7 @@ let userScore = 0;
 let totalScore = 0;
 let cardCount = 0;
 
+
 const next_btn = quiz_box.querySelector(".next_btn");
 const result_box = document.querySelector(".result_box");
 const next_card = result_box.querySelector(".buttons .next_card");
@@ -80,11 +85,12 @@ next_card.onclick = ()=>{
         showFinal();
     }
     else{
+        container_disabled.classList.remove("disabled");
         quiz_back.classList.remove("activeBack");
     }
 }
 
-// If next button clicked
+// If next button on quizz clicked
 next_btn.onclick =()=>{
    if(que_count < questions1.length -1){
         que_count++;
@@ -100,8 +106,10 @@ next_btn.onclick =()=>{
    };
 }
 
+
+
 //getting questions and options from array
-let questionsArray
+let questionsArray;
 
 function showQuestions(index){
     let questionCategory = "None"
@@ -174,7 +182,7 @@ function showResult(){
         cardScore.innerHTML = scoreTag;  
     }
     else if(userScore > 1){ 
-        let scoreTag = '<span> and congrats! 🎉, You got '+ userScore +' out of '+ questionsArray.length +' </span>';
+        let scoreTag = '<span>and congrats! 🎉, You got <p>'+ userScore +'</p> out of <p>'+ questionsArray.length +'</p></span>';
         cardScore.innerHTML = scoreTag;
     }
     else{ 
