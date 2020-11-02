@@ -15,8 +15,8 @@ html, body {
     height: 100%;
     width: 100%;
     color: #fff;
-    background: purple;
-    font-family: 'Montserrat', sans-serif
+    font-family: 'Montserrat', sans-serif;
+    background-color: purple;
 }
 
 h1,
@@ -30,12 +30,14 @@ font-family: 'Denk One', sans-serif;
 
 /* Landing page */
 
-#home { 
-    background: linear-gradient(rgba(0, 0, 0, 0.753), rgba(0, 0, 0, 0.753)), url('https://pixabay.com/get/52e8d3464251b108feda8460c021307d1736daf85257714a72277dd79e4d_1920.jpg') no-repeat 50% 50%;
-    display: table;
-    height: 100%;
-    width: 100%;
-    background-size: cover;
+
+
+#home {
+ background: linear-gradient(rgba(0, 0, 0, 0.753), rgba(0, 0, 0, 0.753)), url('https://i.postimg.cc/Dz113ML2/walkers-486583-1920.jpg'), no-repeat 50% 50%;
+background-size: cover;
+display: table;
+height: 100%;
+width: 100%;
 }
 
 .landing-text {
@@ -92,9 +94,9 @@ h3 {
 
 /* Card page */
 
-.post-wrap1,
-.post-wrap2,
-.post-wrap3 {
+.card-wrap1,
+.card-wrap2,
+.card-wrap3 {
    width: 300px;
    height: 380px;
    perspective: 200rem;
@@ -104,7 +106,7 @@ h3 {
    max-width: 380px;
 }
 
-.post {
+.flipper {
    position: relative; /* Required to absolutely position the child faces */
    width: 100%;
    height: 100%;
@@ -114,7 +116,7 @@ h3 {
    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);  
 }
 
-.post-front, .post-back {
+.card-front, .card-back {
    position: absolute;
    width: 100%;
    height: 100%;
@@ -124,13 +126,13 @@ h3 {
    backface-visibility: hidden;
 }
 
-.post-back {
+.card-back {
    transform: rotateY(180deg);
 }
 
-.post-wrap1:hover .post,
-.post-wrap2:hover .post,
-.post-wrap3:hover .post{
+.card-wrap1:hover .flipper,
+.card-wrap2:hover .flipper,
+.card-wrap3:hover .flipper{
    transform: rotateY(180deg);
 }
 
@@ -140,46 +142,37 @@ h3 {
 }
 
 
-.post-img {
+.front-img {
    background-size: cover;
    background-position: center;
-   height: 420px;
+   height: 380px;
    border-top-left-radius: 10px;
    border-top-right-radius: 10px;
    border-bottom-left-radius: 10px;
    border-bottom-right-radius: 10px;
 }
-.post-info {
-   padding: 20px 30px 30px;
-}
-.post-info span {
-   font-size: 0.8rem;
-   color: black;
-}
-.post-info h2{
-   font-weight: bold;
-   font-size: 1.2rem;
-   padding-top: 5px;
-}
 
-.post-back {
+.card-back {
    background-color: black;
    padding: 30px;
    display: flex;
    flex-direction: column;
-   justify-content: space-between; /* To push the read more button to bottom */
-   align-items: flex-start; /* To position the read more button at the left */
+   justify-content: center;/* To push the read more button to bottom */
+   align-items: center;
+    /* To position the read more button at the left */
 }
-.post-back h2{
+.card-back h2{
    font-weight: bold;
    font-size: 1.2rem;
    padding-top: 5px;
+   text-align: center;
 }
-.post-back p {
+.card-back p {
    margin-top: 10px;
    line-height: 1.6;
+   text-align: center;
 }
-.post-back button{
+.card-back button{
    text-decoration: none;
    color: #ffffff;
    background-color: red;
@@ -190,8 +183,13 @@ h3 {
    font-weight: bold;
    border-radius: 5px;
 }
-.post-back button.disabled {
-    display: none;
+
+.slasher_img,
+.monster_img,
+.paranormal_img { 
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;  
 }
 
 .title-container{
@@ -209,12 +207,6 @@ text-align: center;
    justify-content: center;
    flex-wrap: wrap; /* Required to position the posts one below the other on smaller devices */
 }
-.monster_card.disabled{
-    background: grey;
-}
-.monster_btn.disabled{
-    display: none;
-}
 
 /* Media Queries */
 
@@ -230,7 +222,7 @@ text-align: center;
 
 /* Quizz */
 
-.info_box,
+.rule_box,
 .quiz_box,
 .result_box,
 .final_box{
@@ -243,7 +235,7 @@ text-align: center;
     transition: all 0.3s ease;
 }
 
-.info_box.activeInfo,
+.rule_box.activeInfo,
 .quiz_box.activeQuiz,
 .result_box.activeResult,
 .final_box.activeFinal{
@@ -254,11 +246,11 @@ text-align: center;
 }
 
 .quiz_back {
-    width: 100%;
-    height: 100%;
      position: absolute;
-    top:50%;
+     top:50%;
     left:50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
 }
 
 .quiz_back.activeBack{
@@ -266,21 +258,11 @@ text-align: center;
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
     background-color: yellow;
+     width: 100%;
+    height: 100%;
 }
 
-.start-btn button {
-    font-size: 25px;
-    font-weight: 500;
-    color: white;
-    padding: 15px 30px;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    background: red;
-    cursor: pointer;
-}
-
-.info_box{
+.rule_box{
     width:  540px;
     max-width: 80%;
     background: black;
@@ -290,7 +272,7 @@ text-align: center;
     transform: translate(-50%, -50%) scale(0.5);
 }
 
-.info_box .info_title {
+.rule_box .rule_title {
     height: 60px;
     width: 100%;
     border-bottom: 1px solid white;
@@ -302,21 +284,21 @@ text-align: center;
 
 }
 
-.info_box .info_list{
+.rule_box .rule_list{
     padding: 15px 35px;
 }
 
-.info_box .info_list .info {
+.rule_box .rule_list .rule {
     margin: 5px 0;
     font-size: 17px;
 }
 
-.info_box .info_list .info span {
+.rule_box .rule_list .rule span {
     font-weight: 600;
     color: red;
 }
 
-.info_box .buttons {
+.rule_box .buttons {
     height: 60px;
     display: flex;
     align-items: center;
@@ -325,7 +307,7 @@ text-align: center;
     border-top: 1px solid white;
 }
 
-.info_box .buttons button{
+.rule_box .buttons button{
     margin: 0 5 px;
     height: 40px;
     width: 100px;
@@ -417,21 +399,12 @@ text-align: center;
     user-select: none;
 }
 
-.quiz_box header .time_line {
-    position: absolute;
-    width: 50%;
-    bottom:0px;
-    left: 0px;
-    height: 3px;
-    background: red;
-}
-
 .quiz_box section {
     padding: 25px 30px 20px 30px;
     background: black;
 }
 
-.quiz_box section .que_text{
+.quiz_box section .que_name{
     font-size: 25px;
     font-weight: 600;
 }
@@ -465,28 +438,6 @@ section .option_list .option:hover{
     margin-bottom: 0px
 }
 
-.option_list .option .icon {
-   height: 26px;
-   max-height: 50%;
-   border: 2px solid transparent;
-   border-radius: 50%;
-   text-align: center;
-   font-size: 13px;
-   line-height: 24px;
-   pointer-events: none;
-} 
-
-.option_list .option .icon.tick{
-    border-color: #23903c;
-    color: #23903c;
-    background: #d4edda;
-}
-
-.option_list .option .icon.cross{
-    border-color: #a4283a;
-    color: #f8d7da;
-    background: #a4283a;
-}
 
 .option_list .option.correct{
     border-color: #23903c;
@@ -513,23 +464,22 @@ section .option_list .option:hover{
     justify-content: space-between;
 }
 
-footer .total_que {
+footer .total {
      padding-right: 10px;
 }
 
-.quiz_box footer .total_que span {
+.quiz_box footer .total span {
     display: flex;
     user-select: none;
 }
 
-footer .total_que span p {
+footer .total span p {
     font-weight:500;
     padding: 0 5px;
 }
 
-.total_que span p:first-child{
+.total span p:first-child{
     padding-left: 0px;
-
 }
 
 footer .next_btn {
@@ -553,7 +503,7 @@ footer .next_btn:hover{
 
 .result_box,
 .final_box{
-    background: #fff;
+    background: black;
     width: 450px;
     max-width: 80%;
     padding: 25px 30px;
@@ -575,21 +525,22 @@ footer .next_btn:hover{
     margin-bottom: 10px;
 }
 
-.result_box .complete_text
-.final_box .complete_text{
+.result_box .score_text
+.final_box .score_text{
     font-size: 20px;
     font-weight: 500;
+    color: black;
 }
 
-.result_box .score_text span
-.final_box .final_text span {
+.result_box .card_score span
+.final_box .final_score span {
     display: flex;
     margin: 10px 0;
     font-size: 18px;
     font-weight: 500;
 }
 
-.score_text span p {
+.card_score span p {
     font-weight: 600;
     padding: 0 4px;
 }
@@ -614,112 +565,6 @@ footer .next_btn:hover{
     transition: all 0.3s ease;
 }
 
-/* Card page */
-
-.post-wrap {
-   width: 200px;
-   height: 420px;
-   perspective: 200rem;
-   flex: 1;
-   margin: 0 15px 30px;
-   min-width: 300px;
-   max-width: 380px;
-}
-
-.post {
-   position: relative; /* Required to absolutely position the child faces */
-   width: 100%;
-   height: 100%;
-   transition: transform 1s;
-   transform-style: preserve-3d;
-   border-radius: 10px;
-   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);  
-}
-
-.post-front, .post-back {
-   position: absolute;
-   width: 100%;
-   height: 100%;
-   border-radius: 10px;
-   background-color: black;
-   -webkit-backface-visibility: hidden;
-   backface-visibility: hidden;
-}
-
-.post-back {
-   transform: rotateY(180deg);
-}
-
-.post-wrap:hover .post {
-   transform: rotateY(180deg);
-}
-
-.post-img {
-   background-size: cover;
-   background-position: center;
-   height: 420px;
-   border-top-left-radius: 10px;
-   border-top-right-radius: 10px;
-   border-bottom-left-radius: 10px;
-   border-bottom-right-radius: 10px;
-}
-.post-info {
-   padding: 20px 30px 30px;
-}
-.post-info span {
-   font-size: 0.8rem;
-   color: black;
-}
-.post-info h2{
-   font-weight: bold;
-   font-size: 1.2rem;
-   padding-top: 5px;
-}
-
-.post-back {
-   background-color: black;
-   padding: 30px;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;/* To push the read more button to bottom */
-   align-items: center;
-    /* To position the read more button at the left */
-}
-.post-back h2{
-   font-weight: bold;
-   font-size: 1.2rem;
-   padding-top: 5px;
-   text-align: center;
-}
-.post-back p {
-   margin-top: 10px;
-   line-height: 1.6;
-   text-align: center;
-}
-
-.slasher_img {
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    margin: auto;
-    display: block;
-}
-
-.title-container{
-max-width: 1200px;
-margin: auto;
-padding: 60px 30px 0px;
-text-align: center;
-}
-
-.card-container {
-   max-width: 1200px;
-   margin: auto;
-   padding: 60px 30px;
-   display: flex;
-   justify-content: center;
-   flex-wrap: wrap; /* Required to position the posts one below the other on smaller devices */
-}
 
 /* Media Queries */
 
@@ -732,52 +577,3 @@ text-align: center;
     }
 }
 
-/* Transition page */
-
-.transition-1 {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 101;
-  background-color:blue;
-  opacity: 0;
-  pointer-events: none;
-  transition: 0.5s ease-out;
-}
-
-.transition-1.is-active {
-  pointer-events: all;
-  opacity: 1;
-}
-
-.transition-2 {
-  position: fixed;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  bottom: 0;
-  z-index: 101;
-  background-color: red;
-  transition: 0.5s ease-out;
-}
-
-.transition-2.is-active {
-  left: 0px;
-}
-
-.transition-3 {
-  position: fixed;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 101;
-  background-color: yellow;
-  transition: 0.5s ease-out;
-}
-
-.transition-3.is-active {
-  top: 0;
-}

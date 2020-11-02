@@ -16,13 +16,13 @@
   <!-- Cards-->
 
   <div class="card-container">
-   <div class="post-wrap1"> <!-- The parent element -->
-       <div class="post"> <!-- Child element that flips -->
-           <div class="post-front">
-               <div class="post-img" style="background-image: url('img/Illustration13.jpg');"></div>
+   <div class="card-wrap1"> <!-- The parent element -->
+       <div class="flipper"> <!-- Child element that flips -->
+           <div class="card-front">
+               <div class="front-img" style="background-image: url('img/Illustration13.jpg');"></div>
            </div>
-           <div class="post-back">
-               <img class="slasher_img" src="img/freddy.jpg" alt="">
+           <div class="card-back">
+               <img class="slasher_img" src="img/slasher.jpg" alt="">
                 <h2>SLASHER</h2>
                 <p>
                     Test your knowledge of the Slasher sub-genre! Will you survive ?
@@ -31,12 +31,13 @@
            </div>
        </div>
    </div>
-    <div class="post-wrap2"> <!-- The parent element -->
-       <div class="post"> <!-- Child element that flips -->
-           <div class="post-front">
-               <div class="post-img" style="background-image: url('img/Illustration13.jpg');"></div>
+    <div class="card-wrap2"> <!-- The parent element -->
+       <div class="flipper"> <!-- Child element that flips -->
+           <div class="card-front">
+               <div class="front-img" style="background-image: url('img/Illustration13.jpg');"></div>
            </div>
-           <div class="post-back">
+           <div class="card-back">
+           <img class="paranormal_img" src="img/paranormal.jpg" alt="">
                 <h2>Paranormal</h2>
                 <p>
                     Test your knowledge of the Paranormal sub-genre! Will you survive ?
@@ -45,12 +46,13 @@
            </div>
        </div>
    </div>
-   <div class="post-wrap3">
-       <div class="post">
-           <div class="post-front">
-               <div class="post-img" style="background-image: url('img/Illustration13.jpg');"></div>
+   <div class="card-wrap3">
+       <div class="flipper">
+           <div class="card-front">
+               <div class="front-img" style="background-image: url('img/Illustration13.jpg');"></div>
            </div>
-           <div class="post-back">
+           <div class="card-back">
+            <img class="monster_img" src="img/monster.jpg" alt="">
                 <h2>Monster</h2>
                 <p>
                     Test your knowledge of the Monster sub-genre! Will you survive ?
@@ -61,20 +63,19 @@
    </div>
 </div>
 
-<!-- start Quiz button-->
 
 <!--info box-->
 
-	<div class="info_box container">
-		<div class="info_title">
+	<div class="rule_box container">
+		<div class="rule_title">
 			<span>Some Rules of this Quiz</span>
 		</div>
-		<div class="info_list">
-			<div class="info">1.You will only have <span>15 seconds</span> per question.</div>
-            <div class="info">2.Once you select your answer, you can't reselect.</div>
-            <div class="info">3.You can't select any option once time goes off.</div>
-            <div class="info">4.You can't exit from the Quiz while you're playing.</div>
-            <div class="info">5.You'll get points on the basis of your correct answers.</div>
+		<div class="rule_list">
+			<div class="rule">1.You will only have <span>15 seconds</span> per question.</div>
+            <div class="rule">2.Once you select your answer, you can't reselect.</div>
+            <div class="rule">3.You can't select any option once time goes off.</div>
+            <div class="rule">4.You can't exit from the Quiz while you're playing.</div>
+            <div class="rule">5.You'll get points on the basis of your correct answers.</div>
 		</div>
         <div class="buttons">
         <a href="index.html"><button class="quit">Exit Quiz</button></a>
@@ -85,38 +86,35 @@
     <!-- Quizz Box-->
     <div class="quiz_box container">
         <header>
-            <div class="que_title">Slasher</div>
+            <div class="que_title">Title</div>
             <div class="timer">
                 <div class="timer_text">Time Left</div>
                 <div class="timer_sec">15</div>
             </div>
-            <div class="time_line"></div>
         </header>
         <section>
-         <div class="que_text">
-            <span>What does HTML stand for?</span>
+         <div class="que_name">
+            <span>Question</span>
          </div>
          <div class="option_list">
             <div class="option">
-                <span>Hyper Text PreProcessor</span>
-                <div class="icon tick"><i class="fas fa-check"></i></div>
+                <span>Option</span>                
             </div>
         <div class="option">
-                <span>Hyper Text Markup Language</span>
-                <div class="icon cross"><i class="fas fa-times"></i></div>
+                <span>Option</span>
             </div>
         <div class="option">
-                <span>Hyper Text Multiple Language</span>
+                <span>Option</span>
             </div>
         <div class="option">
-                <span>Hyper Text Multi tool lnaguage</span>
+                <span>Option</span>
             </div>
          </div>
         </section>
- 
+
         <!--Quiz Box footer-->
         <footer>
-            <div class="total_que">
+            <div class="total">
                 <!--<span><p>2</p>Of<p>5</p>Questions</span>-->
             </div>
             <button class="next_btn">Next</button>
@@ -128,8 +126,8 @@
         <div class="icon">
         <i class="fas fa-crown"></i> 
         </div>
-        <div class="complete_text">You've completed the Quiz!</div>
-        <div class="score_text">
+        <div class="score_text">You've completed the Quiz!</div>
+        <div class="card_score">
             <!--<span>and sorry, You got only <p>2</p>out of<p>5</p>.</span>-->
         </div>
         <div class="buttons">
@@ -143,8 +141,8 @@
         <div class="icon">
         <i class="fas fa-crown"></i> 
         </div>
-        <div class="complete_text">FINAL SCORE</div>
-        <div class="final_text">
+        <div class="score_text">FINAL SCORE</div>
+        <div class="final_score">
             <!--<span>and sorry, You got only <p>2</p>out of<p>5</p>.</span>-->
         </div>
         <div class="buttons">
