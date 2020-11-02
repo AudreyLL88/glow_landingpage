@@ -6,7 +6,7 @@
 /* General rules */
 
 * {
-   margin: 0;
+    margin: 0;  
    padding: 0;
    box-sizing: border-box;
 }
@@ -16,7 +16,10 @@ html, body {
     width: 100%;
     color: #fff;
     font-family: 'Montserrat', sans-serif;
-    background-color: purple;
+    background: #403B4A; 
+background: -webkit-linear-gradient(to right, #E7E9BB, #403B4A);  
+background: linear-gradient(to right, #E7E9BB, #403B4A); 
+
 }
 
 h1,
@@ -82,12 +85,13 @@ h3 {
 }
 
 .btn-landing {
-    background-color:  #640417;
+    background-color:  #bf0000;
     color: #fff;
     font: 160%;
+    border: 1px solid white;
 }
 
-.btn-light:hover {
+.btn-landing:hover {
     color: #fff;
     background-color: #36342F;
 }
@@ -121,7 +125,7 @@ h3 {
    width: 100%;
    height: 100%;
    border-radius: 10px;
-   background-color: black;
+   background-color: #0e1111;
    -webkit-backface-visibility: hidden;
    backface-visibility: hidden;
 }
@@ -138,7 +142,7 @@ h3 {
 
 .noHover{
     pointer-events: none;
-    background: blue;
+    background: #0e1111;
 }
 
 
@@ -150,10 +154,11 @@ h3 {
    border-top-right-radius: 10px;
    border-bottom-left-radius: 10px;
    border-bottom-right-radius: 10px;
+   background-color:#a8a8c0;
 }
 
 .card-back {
-   background-color: black;
+   background-color:#0e1111;
    padding: 30px;
    display: flex;
    flex-direction: column;
@@ -171,17 +176,20 @@ h3 {
    margin-top: 10px;
    line-height: 1.6;
    text-align: center;
+   padding-bottom: 10px;
 }
 .card-back button{
    text-decoration: none;
    color: #ffffff;
-   background-color: red;
+   border: 1px solid white;
+   background-color: #bf0000;
    padding: 10px 14px;
    text-transform: uppercase;
    letter-spacing: 0.05em;
    font-size: 0.8em;
    font-weight: bold;
    border-radius: 5px;
+
 }
 
 .slasher_img,
@@ -189,7 +197,8 @@ h3 {
 .paranormal_img { 
     border-radius: 50%;
     width: 150px;
-    height: 150px;  
+    height: 150px; 
+    margin-bottom: 10px; 
 }
 
 .title-container{
@@ -200,13 +209,18 @@ text-align: center;
 }
 
 .card-container {
-   max-width: 1200px;
+  
    margin: auto;
    padding: 60px 30px;
    display: flex;
    justify-content: center;
    flex-wrap: wrap; /* Required to position the posts one below the other on smaller devices */
 }
+
+.card-container p{
+   margin-top: 40px !important;
+}
+
 
 /* Media Queries */
 
@@ -246,18 +260,23 @@ text-align: center;
 }
 
 .quiz_back {
-     position: absolute;
-     top:50%;
+    position: absolute;
+    top:50%;
     left:50%;
     transform: translate(-50%, -50%);
     transition: all 0.3s ease;
+   display: flex;
+   flex-wrap: wrap; /* Required to position the posts one below the other on smaller devices */
 }
 
 .quiz_back.activeBack{
     z-index: 4;
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
-    background-color: yellow;
+  background: #E6DADA;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #274046, #E6DADA);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #274046, #E6DADA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
      width: 100%;
     height: 100%;
 }
@@ -265,7 +284,7 @@ text-align: center;
 .rule_box{
     width:  540px;
     max-width: 80%;
-    background: black;
+    background: #0e1111;
     border-radius:5px;
     opacity: 0;
     pointer-events: none;
@@ -308,7 +327,7 @@ text-align: center;
 }
 
 .rule_box .buttons button{
-    margin: 0 5 px;
+    margin: 0 5px;
     height: 40px;
     width: 100px;
     border: 1px solid white;
@@ -320,29 +339,35 @@ text-align: center;
     transition: all 0.3s ease;
 }
 
-.buttons button.restart{   
-    color:red;
-    background: white;
-
+.buttons button.start{   
+    background:#bf0000;
+    color:#fff;
 }
 
 .buttons button.next_card{
     color: white;
+    background: #bf0000
 }
 
-.buttons button.restart:hover{
-    background: #0263ca;
+.buttons button.start:hover{
+    background: #d3394c;
 }
 
 .buttons button.next_card:hover{
-    background: #0263ca;
+    background: #d3394c;
     color: #fff;
 }
+
+.buttons button.quit{
+    background: white;
+    color: #bf0000
+}
+
 
 .quiz_box{
     width: 550px;
     max-width: 80%;
-    background: black;
+    background: #0e1111;
     border-radius: 5px;
     opacity: 0;
     pointer-events: none;
@@ -354,7 +379,7 @@ text-align: center;
     z-index: 99;
     height: 70px;
     padding: 0 30px;
-    background: black;
+    background: #0e1111;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -374,7 +399,9 @@ text-align: center;
     justify-content: space-between;
     width: 145px;
     height: 45px;
-    background: red;
+    min-width: 100px;
+    min-height: 40px ;
+    background:#bf0000;
     border: 1px solid white;
     border-radius: 5px;
     padding: 0 8px;
@@ -401,7 +428,7 @@ text-align: center;
 
 .quiz_box section {
     padding: 25px 30px 20px 30px;
-    background: black;
+    background: #0e1111;
 }
 
 .quiz_box section .que_name{
@@ -415,7 +442,7 @@ text-align: center;
 }
 
 section .option_list .option{
-    background: black;
+    background: #0e1111;
     border:1px solid white;
     border-radius: 5px;
     padding: 8px 15px;
@@ -429,9 +456,9 @@ section .option_list .option{
 }
 
 section .option_list .option:hover{
-    color: #004085;
-    background: #cce5ff;
-    border-color: #b8daff;
+    color:	#400000;
+    background: #d3394c;
+    border-color: #af2d46;
 }
 
 .option_list .option:last-child{
@@ -489,28 +516,28 @@ footer .next_btn {
     font-size: 18px;
     font-weight: 400;
     outline: none;
-    background: #007bff;
+    background: #bf0000;
     color: #fff;
     border-radius: 5px;
-    border: 1px solid #007bff;
+    border: 1px solid #fff;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 footer .next_btn:hover{
-    background: #0263ca;
+    background: #d3394c;
 }
 
 .result_box,
 .final_box{
-    background: black;
+    background: #0e1111;
     width: 450px;
     max-width: 80%;
     padding: 25px 30px;
     border-radius: 5px;
     display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
     justify-content: space-between;
     text-align: center;
     opacity: 0;
@@ -529,7 +556,6 @@ footer .next_btn:hover{
 .final_box .score_text{
     font-size: 20px;
     font-weight: 500;
-    color: black;
 }
 
 .result_box .card_score span
@@ -560,7 +586,7 @@ footer .next_btn:hover{
     font-size: 18px;
     font-weight: 500;
     border-radius: 5px;
-    border: 1px solid #007bff;
+    border: 1px solid #fff;
     cursor: pointer;
     transition: all 0.3s ease;
 }

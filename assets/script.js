@@ -5,7 +5,7 @@ const start_btn_monster = document.querySelector(".start-btn-monster button");
 const start_btn_paranormal = document.querySelector(".start-btn-paranormal button");
 const rule_box = document.querySelector(".rule_box");
 const exit_btn = rule_box.querySelector(".buttons .quit");
-const continue_btn = rule_box.querySelector(".buttons .restart");
+const continue_btn = rule_box.querySelector(".buttons .start");
 const quiz_box = document.querySelector(".quiz_box");
 const option_list = document.querySelector(".option_list");
 const timeCount = document.querySelector(".timer .timer_sec");
@@ -66,7 +66,6 @@ let cardCount = 0;
 
 const next_btn = quiz_box.querySelector(".next_btn");
 const result_box = document.querySelector(".result_box");
-const restart_quiz = result_box.querySelector(".buttons .restart");
 const next_card = result_box.querySelector(".buttons .next_card");
 const final_box = document.querySelector(".final_box");
 
@@ -171,15 +170,15 @@ function showResult(){
     result_box.classList.add("activeResult"); 
     const cardScore = result_box.querySelector(".card_score");
     if (userScore > 3){ 
-        let scoreTag = '<span>and congrats! 🎉, You got <p>'+ userScore +'</p> out of <p>'+ questions1.length +'</p></span>';
+        let scoreTag = '<span>and congrats! 🎉, You got <p>'+ userScore +'</p> out of <p>'+ questionsArray.length +'</p></span>';
         cardScore.innerHTML = scoreTag;  
     }
     else if(userScore > 1){ 
-        let scoreTag = '<span>and nice 😎, You got <p>'+ userScore +'</p> out of <p>'+ questions1.length +'</p></span>';
+        let scoreTag = '<span> and congrats! 🎉, You got '+ userScore +' out of '+ questionsArray.length +' </span>';
         cardScore.innerHTML = scoreTag;
     }
     else{ 
-        let scoreTag = '<span>and sorry 😐, You got only <p>'+ userScore +'</p> out of <p>'+ questions1.length +'</p></span>';
+        let scoreTag = '<span>and congrats! 🎉, You got <p>'+ userScore +'</p> out of <p>'+ questionsArray.length +'</p></span>';
         cardScore.innerHTML = scoreTag;
     }
 }
